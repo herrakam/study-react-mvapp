@@ -8,16 +8,18 @@ const foodILike = [
   { name: "kimchi" },
   { name: "ramen" },
   { name: "chicken" },
-  { name: "pizza"}
+  { name: "pizza" }
 ]
+function renderFood(dish) {
+ 
+  return <Food name={dish.name} />
+
+}
 
 function App() {
   return (
     <div className="App">
-      {foodILike.map(function (dish) {
-        return <Food name={dish.name} />
-      })
-      }
+      {foodILike.map(renderFood)}
 
 
     </div>
