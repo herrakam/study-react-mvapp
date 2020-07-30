@@ -8,30 +8,35 @@ function Food({ name, rating }) {
   </div>
 }
 
-const foodILike = [
-  { name: "kimchi", rating: 5 ,id:1},
-  { name: "ramen", rating: 4.5,id:2 },
-  { name: "chicken", rating: 3.8,id:3 },
-  { name: "pizza", rating: 4.1,id:4 }
-]
 
 Food.propTypes = {
   name: propTypes.string.isRequired,
   rating: propTypes.number
 
 }
+class App extends React.Component {
+  state = {
+    count: 0
+  }
 
-function App() {
-  return (
-    <div className="App">
-      {foodILike.map((dish, index) => (
-        <Food
-          name={dish.name}
-          rating={dish.rating}
-          key = {index} />
-      ))}
-    </div>
-  );
+
+  render() {
+
+
+    return (
+      <div>
+        <h1>the number is: {this.state.count}</h1>
+        <button onClick={this.Add}>Add</button>
+        <button onClick={this.Minus}>Minus</button>
+      </div>)
+  }
+  Add = () => {
+    console.log("add")
+  }
+  Minus = () => {
+    console.log("minus")
+  }
 }
+
 
 export default App;
