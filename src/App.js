@@ -31,12 +31,12 @@ class App extends React.Component {
       </div>)
   }
   Add = () => {
-    console.log("add")
+    this.setState(current => ({count:current.count + 1 }))   //currnet 함수 사용하면 this.state를 currnet로 대체할 수 있음
   }
   Minus = () => {
-    console.log("minus")
+    this.setState({count:this.state.count - 1})
   }
 }
 
-
+ 
 export default App;
