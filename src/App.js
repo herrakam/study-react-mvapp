@@ -15,13 +15,18 @@ Food.propTypes = {
 
 }
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    console.log("hello");
+  }
+
   state = {
     count: 0
   }
 
 
   render() {
-
+    console.log("i am rendering");
 
     return (
       <div>
@@ -31,10 +36,20 @@ class App extends React.Component {
       </div>)
   }
   Add = () => {
-    this.setState(current => ({count:current.count + 1 }))   //currnet 함수 사용하면 this.state를 currnet로 대체할 수 있음
+    this.setState(current => ({count:current.count + 1 }))   //current 함수 사용하면 this.state를 currnet로 대체할 수 있음
   }
   Minus = () => {
     this.setState({count:this.state.count - 1})
+  }
+
+  componentDidMount(){
+    console.log("component rendered")
+  }
+  componentDidUpdate(){
+    console.log("state updated")
+  }
+  componentWillUnmount(){
+    console.log("goodbye")
   }
 }
 
